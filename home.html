@@ -4,15 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJs Custom Interiors</title>
+    <style>
+        .mouse-hand:hover {
+            cursor: pointer;
+        }
+        .openable {
+            min-height: 400px;
+        }
+        .content {
+			flex: 1;
+			padding: 20px;
+			box-sizing: border-box;
+			margin-left: 200px;
+			text-align: justify;
+		}
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .portfolio-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .portfolio-images {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-images img {
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+
+        .portfolio-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        .portfolio-text h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .portfolio-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        #livingRoomClose, #basementClose, #accentWallClose, #livingRoomCollage, #basementCollage, #accentWallCollage {
+            position: absolute;
+            right: 0px
+        }
+   		.sidebar {
+			width: 200px;
+			height: 100vh;
+			background-color: #136a13;
+			color: #fff;
+			box-sizing: border-box;
+			position: fixed;
+		}
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#livingRoomSect").hide();
+            $("#basementSect").hide();
+            $("#accentWallSect").hide();
+            $("#livingRoomIndexDiv").click(function(){
+                $("#basementSect").hide(1000);
+                $("#accentWallSect").hide(1000);
+                document.getElementById("livingRoomSect").style.minHeight = "0px";
+                $("#livingRoomSect").show(1000);
+                $.delay(1000);
+                document.getElementById("livingRoomSect").style.minHeight = "400px";
+            });
+            $("#livingRoomClose").click(function(){
+                document.getElementById("livingRoomSect").style.minHeight = "0px";
+                $("#livingRoomSect").hide(1000);
+                $.delay(1000);
+                document.getElementById("livingRoomSect").style.minHeight = "400px";
+            });
+            $("#basementIndexDiv").click(function(){
+                $("#livingRoomSect").hide(1000);
+                $("#accentWallSect").hide(1000);
+                document.getElementById("basementSect").style.minHeight = "0px";
+                $("#basementSect").show(1000);
+                $.delay(1000);
+                document.getElementById("basementSect").style.minHeight = "400px";
+            });
+            $("#basementClose").click(function(){
+                document.getElementById("basementSect").style.minHeight = "0px";
+                $("#basementSect").hide(1000);
+                $.delay(1000);
+                document.getElementById("basementSect").style.minHeight = "400px";
+            });
+            $("#accentWallIndexDiv").click(function(){
+                $("#livingRoomSect").hide(1000);
+                $("#basementSect").hide(1000);
+                document.getElementById("accentWallSect").style.minHeight = "0px";
+                $("#accentWallSect").show(1000);
+                $.delay(1000);
+                document.getElementById("accentWallSect").style.minHeight = "400px";
+            });
+            $("#accentWallClose").click(function(){
+            document.getElementById("accentWallSect").style.minHeight = "0px";
+                $("#accentWallSect").hide(1000);
+                $.delay(1000);
+                document.getElementById("accentWallSect").style.minHeight = "400px";
+            });
+        });
+    </script>
 </head>
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="bg-white shadow-lg">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px"></div>
-                <!--<div>DJs Custom Interiors</div>-->
+            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px" alt="Logo"></div>
+            <!--<div>DJs Custom Interiors</div>-->
             <div class="space-x-8">
                 <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
                 <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>
@@ -77,21 +198,21 @@
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover"/>
+            <div id="livingRoomIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Modern Living Room</h3>
                     <p class="text-gray-600">Contemporary design with comfortable living space</p>
                 </div>
             </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <div id="basementIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
                 <img src="/img/BasementRoom.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Basement Movie Theaters</h3>
                     <p class="text-gray-600">Modern Home-Theater for a dream man-cave</p>
                 </div>
             </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <div id="accentWallIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
                 <img src="/img/AccentWall1.jpg" alt="Project 3" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
@@ -100,9 +221,60 @@
             </div>
         </div>
     </div>
+    <div id="livingRoomSect" class="portfolio-item">
+        <div>
+            <img src="/img/close.jpg" id="livingRoomClose" alt="Close"/>
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/Living1.jpg" alt="" width="450">
+                <img src="/img/Living2.jpg" alt="" width="450">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Modern living rooms</h3>
+                <p>Elevate your home's central gathering space with our sleek, contemporary living room designs. We blend clean lines, minimalist aesthetics, and functional layouts to create sophisticated modern environments that balance style with comfort. Our approach incorporates carefully selected materials—from polished concrete and brushed metals to warm woods and textural fabrics—all working together to achieve visual harmony while maintaining a welcoming atmosphere.</p>
+                <p>Each contemporary living room is thoughtfully curated to reflect your personal lifestyle needs and design sensibilities, resulting in a refined space that feels both cutting-edge and timeless. Our attention to lighting, spatial flow, and architectural details ensures your modern living area becomes the striking yet comfortable centerpiece of your home.</p>
+            </div>
+        </div>
+    </div>
+    <div id="basementSect" class="portfolio-item">
+        <div>
+            <img src="/img/close.jpg" id="basementClose"  alt="Close">
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/Basement1.jpg" alt="" width="450">
+                <img src="/img/Basement2.jpg" alt="" width="450">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Basement movie theaters</h3>
+                <p>Transform your underground space into an immersive entertainment experience with our custom basement movie room designs. We combine premium audio-visual technology with thoughtful interior elements to create the perfect cinematic environment. Our designs feature strategic lighting, acoustic treatments, and comfortable seating arrangements that maximize both the technical performance and aesthetic appeal of your home theater.</p>
+                <p>Each basement movie room is uniquely crafted to accommodate your specific space constraints, technical requirements, and design preferences, resulting in a personalized entertainment hub that will impress family and friends while providing years of enjoyment.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="accentWallSect" class="portfolio-item">
+        <div>
+            <img src="/img/close.jpg" id="accentWallClose"  alt="Close"/>
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/AccentWall4.jpg"  alt="Accent Wall Example 2" width="450">
+                <img src="/img/AccentWall1.jpg"  alt="Accent Wall Example 1" width="350">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
+                <p>A striking accent wall can transform any room from ordinary to extraordinary. Our accent wall designs add depth, character, and visual interest to your space with carefully selected colors, textures, and patterns. Whether you prefer bold geometric designs, subtle textured finishes, or dramatic color statements, our team delivers custom solutions that perfectly complement your existing décor while making a powerful statement.</p>
+                <p>Each project is custom-designed to meet your specific needs and aesthetic preferences, ensuring a result that not only looks stunning but also reflects your personal style.</p>
+
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Contact Section
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
@@ -124,7 +296,7 @@
             </form>
         </div>
     </div>
-</section>-->
+</section>
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">

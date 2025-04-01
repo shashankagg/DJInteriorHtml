@@ -4,77 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJs Custom Interiors</title>
-    <style>
-        .mouse-hand:hover {
-            cursor: pointer;
-        }
-        .openable {
-            min-height: 400px;
-        }
-        #livingRoomClose, #basementClose, #accentWallClose, #livingRoomCollage, #basementCollage, #accentWallCollage {
-            position: absolute;
-            right: 0px
-        }
-    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#livingRoomSect").hide();
-            $("#basementSect").hide();
-            $("#accentWallSect").hide();
-            $("#livingRoomIndexDiv").click(function(){
-                $("#basementSect").hide(1000);
-                $("#accentWallSect").hide(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "0px";
-                $("#livingRoomSect").show(1000);
-                $.delay(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "400px";
-            });
-            $("#livingRoomClose").click(function(){
-                document.getElementById("livingRoomSect").style.minHeight = "0px";
-                $("#livingRoomSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "400px";
-            });
-            $("#basementIndexDiv").click(function(){
-                $("#livingRoomSect").hide(1000);
-                $("#accentWallSect").hide(1000);
-                document.getElementById("basementSect").style.minHeight = "0px";
-                $("#basementSect").show(1000);
-                $.delay(1000);
-                document.getElementById("basementSect").style.minHeight = "400px";
-            });
-            $("#basementClose").click(function(){
-                document.getElementById("basementSect").style.minHeight = "0px";
-                $("#basementSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("basementSect").style.minHeight = "400px";
-            });
-            $("#accentWallIndexDiv").click(function(){
-                $("#livingRoomSect").hide(1000);
-                $("#basementSect").hide(1000);
-                document.getElementById("accentWallSect").style.minHeight = "0px";
-                $("#accentWallSect").show(1000);
-                $.delay(1000);
-                document.getElementById("accentWallSect").style.minHeight = "400px";
-            });
-            $("#accentWallClose").click(function(){
-            document.getElementById("accentWallSect").style.minHeight = "0px";
-                $("#accentWallSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("accentWallSect").style.minHeight = "400px";
-            });
-        });
-    </script>
 </head>
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="bg-white shadow-lg">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px" alt="Logo"></div>
-            <!--<div>DJs Custom Interiors</div>-->
+            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px"></div>
+                <!--<div>DJs Custom Interiors</div>-->
             <div class="space-x-8">
                 <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
                 <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>
@@ -139,21 +77,21 @@
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div id="livingRoomIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
-                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Modern Living Room</h3>
                     <p class="text-gray-600">Contemporary design with comfortable living space</p>
                 </div>
             </div>
-            <div id="basementIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
                 <img src="/img/BasementRoom.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Basement Movie Theaters</h3>
                     <p class="text-gray-600">Modern Home-Theater for a dream man-cave</p>
                 </div>
             </div>
-            <div id="accentWallIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
                 <img src="/img/AccentWall1.jpg" alt="Project 3" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
@@ -162,26 +100,9 @@
             </div>
         </div>
     </div>
-    <div id="livingRoomSect" class="openable">
-        <img src="/img/Collages/LivingRoomC.png" id="livingRoomCollage" alt="" height="400" width="266">
-        <img src="/img/close.jpg" id="livingRoomClose"  alt="Close"/>
-        <h3 class="text-xl font-semibold mb-2">Modern living rooms</h3>
-        <p>This is a description </p>
-    </div>
-    <div id="basementSect" class="openable">
-        <img src="/img/Collages/LivingRoomC.png" id="basementCollage" alt="" height="400" width="266">
-        <img src="/img/close.jpg" id="basementClose"  alt="Close"/>
-        <h3 class="text-xl font-semibold mb-2">Basement movie theaters</h3>
-        <p>This is another description</p>
-    </div>
-    <div id="accentWallSect" class="openable">
-        <img src="/img/Collages/LivingRoomC.png" id="accentWallCollage" alt="" height="400" width="266">
-        <img src="/img/close.jpg" id="accentWallClose"  alt="Close"/>
-        <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
-        <p>A third description</p>
-    </div>
 </section>
 
+<!-- Contact Section
 <section id="contact" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
@@ -203,7 +124,7 @@
             </form>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
