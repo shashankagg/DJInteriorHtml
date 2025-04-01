@@ -77,55 +77,7 @@
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#livingRoomSect").hide();
-            $("#basementSect").hide();
-            $("#accentWallSect").hide();
-            $("#livingRoomIndexDiv").click(function(){
-                $("#basementSect").hide(1000);
-                $("#accentWallSect").hide(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "0px";
-                $("#livingRoomSect").show(1000);
-                $.delay(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "400px";
-            });
-            $("#livingRoomClose").click(function(){
-                document.getElementById("livingRoomSect").style.minHeight = "0px";
-                $("#livingRoomSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("livingRoomSect").style.minHeight = "400px";
-            });
-            $("#basementIndexDiv").click(function(){
-                $("#livingRoomSect").hide(1000);
-                $("#accentWallSect").hide(1000);
-                document.getElementById("basementSect").style.minHeight = "0px";
-                $("#basementSect").show(1000);
-                $.delay(1000);
-                document.getElementById("basementSect").style.minHeight = "400px";
-            });
-            $("#basementClose").click(function(){
-                document.getElementById("basementSect").style.minHeight = "0px";
-                $("#basementSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("basementSect").style.minHeight = "400px";
-            });
-            $("#accentWallIndexDiv").click(function(){
-                $("#livingRoomSect").hide(1000);
-                $("#basementSect").hide(1000);
-                document.getElementById("accentWallSect").style.minHeight = "0px";
-                $("#accentWallSect").show(1000);
-                $.delay(1000);
-                document.getElementById("accentWallSect").style.minHeight = "400px";
-            });
-            $("#accentWallClose").click(function(){
-            document.getElementById("accentWallSect").style.minHeight = "0px";
-                $("#accentWallSect").hide(1000);
-                $.delay(1000);
-                document.getElementById("accentWallSect").style.minHeight = "400px";
-            });
-        });
-    </script>
+    <script src="/src/home.js"></script>
 </head>
 <body class="bg-gray-50">
 <!-- Navigation -->
@@ -221,6 +173,7 @@
             </div>
         </div>
     </div>
+
     <div id="livingRoomSect" class="portfolio-item">
         <div>
             <img src="/img/close.jpg" id="livingRoomClose" alt="Close"/>
