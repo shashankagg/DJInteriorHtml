@@ -8,23 +8,63 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/js/home-ai.js"></script>
+    <script src="/js/nav.js"></script>
 </head>
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="bg-white shadow-lg">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px" alt="Logo"></div>
-            <!--<div>DJs Custom Interiors</div>-->
-            <div class="space-x-8">
-                <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
-                <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <img src="/img/dj-logo.png" class="h-8 md:h-12 w-auto" alt="Logo">
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-200">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-gray-900 transition duration-200">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition duration-200">Portfolio</a>
+                <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition duration-200">Pricing</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition duration-200">Contact</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+        <div class="px-4 pt-2 pb-4 space-y-2">
+            <a href="#" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-200">Home</a>
+            <a href="#services" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-200">Services</a>
+            <a href="#portfolio" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-200">Portfolio</a>
+            <a href="#pricing" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-200">Pricing</a>
+            <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition duration-200">Contact</a>
+        </div>
+    </div>
 </nav>
+<!--<nav class="bg-white shadow-lg">-->
+<!--    <div class="max-w-6xl mx-auto px-4">-->
+<!--        <div class="flex justify-between items-center py-4">-->
+<!--            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px" alt="Logo"></div>-->
+<!--            &lt;!&ndash;<div>DJs Custom Interiors</div>&ndash;&gt;-->
+<!--            <div class="space-x-8">-->
+<!--                <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>-->
+<!--                <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>-->
+<!--                <a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a>-->
+<!--                <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
 
 <!-- Hero Section -->
 <div class="relative h-screen">
@@ -34,38 +74,38 @@
         <div class="text-center text-white">
             <h1 class="text-5xl font-bold mb-4">Transform Your Space</h1>
             <p class="text-xl mb-8">Creating beautiful, functional spaces that inspire</p>
-            <a href="#contact" class="bg-white text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-100 transition">Get Started</a>
+            <a href="#services" class="bg-white text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-100 transition">Get Started</a>
         </div>
     </div>
 </div>
 
-<!-- Services Section -->
-<section id="services" class="py-20 bg-white">
+<!-- Services Section with Sprite Icons -->
+<section id="services" class="py-20 bg-gray">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div class="">
-            <div class="text-center p-6">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="text-center p-6 flex-1">
                 <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    <svg class="w-8 h-8">
+                        <use href="/icons/sprite.svg#residential"></use>
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Residential Design</h3>
                 <p class="text-gray-600">Transform your home into a beautiful and functional space</p>
             </div>
-            <div class="text-center p-6">
+            <div class="text-center p-6 flex-1">
                 <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    <svg class="w-8 h-8">
+                        <use href="/icons/sprite.svg#commercial"></use>
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Commercial Design</h3>
                 <p class="text-gray-600">Create an inspiring look to capture your small business vibe</p>
             </div>
-            <div class="text-center p-6">
+            <div class="text-center p-6 flex-1">
                 <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    <svg class="w-8 h-8">
+                        <use href="/icons/sprite.svg#consultation"></use>
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Consultation</h3>
@@ -76,43 +116,36 @@
 </section>
 
 <!-- Portfolio Section -->
-<section id="portfolio" class="py-20 bg-gray-50">
+<section id="portfolio" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
-        <div>
-<!--            <div id="PortLeftArrow" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand w-20 object-cover">-->
-<!--                <p>&#x25B2</p>-->
-<!--            </div>-->
-<!--            <div id="verySpecialIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">-->
-                <div id="livingRoomIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand" style="width:370px;">
-                    <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Modern Living Room</h3>
-                        <p class="text-gray-600">Contemporary design with comfortable living space</p>
-                    </div>
+        <!-- Add grid container with equal columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div id="livingRoomIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Modern Living Room</h3>
+                    <p class="text-gray-600">Contemporary design with comfortable living space</p>
                 </div>
-                <div id="basementIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand" style="width:370px;">
-                    <img src="/img/BasementRoom.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Home Theaters</h3>
-                        <p class="text-gray-600">Modern Home-Theater for a dream man-cave</p>
-                    </div>
+            </div>
+            <div id="basementIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/BasementRoom.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Home Theaters</h3>
+                    <p class="text-gray-600">Modern Home-Theater for a dream man-cave</p>
                 </div>
-                <div id="accentWallIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand" style="width:370px;">
-                    <img src="/img/AccentWall-thumb.jpg" alt="Project 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
-                        <p class="text-gray-600">An elegant nook to inspire creativity</p>
-                    </div>
+            </div>
+            <div id="accentWallIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/accent-thumb.png" alt="Project 3" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
+                    <p class="text-gray-600">An elegant nook to inspire creativity</p>
                 </div>
-<!--            </div>-->
-<!--            <div id="PortRightArrow" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand w-20 object-cover">-->
-<!--                <p>&#x25B2</p>-->
-<!--            </div>-->
+            </div>
         </div>
     </div>
     <div id="livingRoomSect" class="portfolio-item max-w-6xl mx-auto">
-        <div>
+        <div class="mouse-hand">
             <img src="/img/icons8-close-32.png" id="livingRoomClose" alt="Close"/>
         </div>
         <div class="portfolio-text">
@@ -126,7 +159,7 @@
                 <img src="/img/Living2.jpg" alt="Custom shelving and frame accentuating the fireplace feature" width="450">
             </div>
             <div class="portfolio-text">
-<!--                <h3 class="text-xl font-semibold mb-2">Modern living rooms</h3>-->
+                <!--                <h3 class="text-xl font-semibold mb-2">Modern living rooms</h3>-->
                 <p>Elevate your home's central gathering space with our sleek, contemporary living room designs. We blend clean lines, minimalist aesthetics, and functional layouts to create sophisticated modern environments that balance style with comfort. Our approach incorporates carefully selected materials—from polished concrete and brushed metals to warm woods and textural fabrics—all working together to achieve visual harmony while maintaining a welcoming atmosphere.</p>
                 <p>Each contemporary living room is thoughtfully curated to reflect your personal lifestyle needs and design sensibilities, resulting in a refined space that feels both cutting-edge and timeless. Our attention to lighting, spatial flow, and architectural details ensures your modern living area becomes the striking yet comfortable centerpiece of your home.</p>
             </div>
@@ -147,7 +180,7 @@
                 <img src="/img/Portfolio/BasementMediaRoom.jpg" alt="Multifunctional use of a small space: Media room + Guest room" width="450">
             </div>
             <div class="portfolio-text">
-<!--                <h3 class="text-xl font-semibold mb-2">Home Theaters</h3>-->
+                <!--                <h3 class="text-xl font-semibold mb-2">Home Theaters</h3>-->
                 <p>Transform your recreational space into an immersive entertainment experience with our custom movie room designs. We combine premium audio-visual technology with thoughtful interior elements to create the perfect cinematic environment. Our designs feature strategic lighting, acoustic treatments, and comfortable seating arrangements that maximize both the technical performance and aesthetic appeal of your home theater.</p>
                 <p>Each movie room is uniquely crafted to accommodate your specific space constraints, technical requirements, and design preferences, resulting in a personalized entertainment hub that will impress family and friends while providing years of enjoyment.</p>
             </div>
@@ -179,34 +212,97 @@
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Pricing Section -->
+<section id="pricing" class="py-20 gray">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Pricing Model</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-lg shadow-lg overflow-hidden">
+                <thead>
+                <tr class="bg-gray-100">
+                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Services</th>
+                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Pricing</th>
+                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Additional Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-800">Introduction Call</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">No Charge</span>
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        We begin our process with understanding the specific challenges that our customers are trying to address to make sure we can provide the best service. Our first <strong>30 minute introduction call is obligation free</strong>, with the option to set up a video or audio call. We support Zoom, FaceTime and WhatsApp Video.
+                    </td>
+                </tr>
+                <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-800">Consultation</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">$100/hour</span>
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        For the next steps, we can either build a design based on in-person visit (1 hour charge @$100/hour) or photo and video input wherever feasible. This visitation charge will be discounted for the clients who are moving forward with design services.
+                    </td>
+                </tr>
+                <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-800">Full-room Design</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">$350-$600</span>
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        A typical single room design is estimated at 4-5 hours of design and research work, and clients can expect a 5D software rendering, up to 2 revisions and links to all items discussed as part of design. Physical delivery of items or installation is not included.<br><br>
+                        <em>We do offer multi-room discounts for our clients.</em>
+                    </td>
+                </tr>
+                <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 font-medium text-gray-800">Custom Builds</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Variable</span>
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        We will work with the clients to give an estimate if they'd like to include delivery, accessory and art purchases and customization. For custom builds like accent walls, built-in cabinetry etc. we will provide estimates and contract terms.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!--        <div class="mt-8 text-center">-->
+<!--            <p class="text-gray-600">-->
+<!--                Please see the projects section of our website to see some of our earlier work!-->
+<!--            </p>-->
+<!--        </div>-->
+    </div>
+</section>
+
+<!-- Contact Section with Sprite Icons -->
 <section id="contact" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
-        <h3 class="text-xl font-bold text-center">Email</h3>
-        <h4 class="text-l font-bold text-center underline">CustomInteriorsByDJ@gmail.com</h4>
-        <br><br>
-        <h3 class="text-xl font-bold text-center">Phone</h3>
-        <h4 class="text-l font-bold text-center underline">(646) 404-1306</h4>
-        <!--<div class="bg-gray-50 rounded-lg p-8">
-            <form class="space-y-6">
-                <div>
-                    <label class="block text-gray-700 mb-2">Name</label>
-                    <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"/>
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+            <div class="text-center flex-1">
+                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10">
+                        <use href="/icons/sprite.svg#email"></use>
+                    </svg>
                 </div>
-                <div>
-                    <label class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"/>
+                <h3 class="text-xl font-bold mb-2">Email</h3>
+                <h4 class="text-lg font-bold underline text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                    <a href="mailto:CustomInteriorsByDJ@gmail.com">CustomInteriorsByDJ@gmail.com</a>
+                </h4>
+            </div>
+            <div class="text-center flex-1">
+                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10">
+                        <use href="/icons/sprite.svg#phone"></use>
+                    </svg>
                 </div>
-                <div>
-                    <label class="block text-gray-700 mb-2">Message</label>
-                    <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4"></textarea>
-                </div>
-                <button class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition">Send Message</button>
-            </form>
-
-
-        </div>-->
+                <h3 class="text-xl font-bold mb-2">Phone</h3>
+                <h4 class="text-lg font-bold underline text-green-600 hover:text-green-800 transition-colors duration-300">
+                    <a href="tel:+16464041306">(646) 404-1306</a>
+                </h4>
+            </div>
+        </div>
     </div>
 </section>
 
