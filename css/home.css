@@ -1,0 +1,87 @@
+.mouse-hand:hover {
+    cursor: pointer;
+}
+.openable {
+    min-height: 400px;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    text-align: justify;
+}
+.portfolio-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.portfolio-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.portfolio-images {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.portfolio-images img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: auto;
+}
+
+.portfolio-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+.portfolio-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.portfolio-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+#livingRoomClose, #basementClose, #accentWallClose, #livingRoomCollage, #basementCollage, #accentWallCollage {
+    position: absolute;
+    right: 0px
+}
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #136a13;
+    color: #fff;
+    box-sizing: border-box;
+    position: fixed;
+}
+#verySpecialIndexDiv {
+    float: left;
+    width: 80%;
+    height: 350px;
+}
+#PortRightArrow {
+    float: right;
+    width: 10%;
+    height: 350px;
+}
+#PortLeftArrow {
+    float: left;
+    width: 10%;
+    height: 350px;
+}
+#accentWallIndexDiv, #livingRoomIndexDiv, #basementIndexDiv {
+    display: inline-block;
+}

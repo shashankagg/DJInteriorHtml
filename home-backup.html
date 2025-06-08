@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJs Custom Interiors</title>
+    <link rel="stylesheet" href="/css/home.css">
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/home.js"></script>
 </head>
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="bg-white shadow-lg">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px"></div>
-                <!--<div>DJs Custom Interiors</div>-->
+            <div class="text-2xl font-bold text-gray-800"><img src="/img/dj-logo.png" width="380px" alt="Logo"></div>
+            <!--<div>DJs Custom Interiors</div>-->
             <div class="space-x-8">
                 <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
                 <a href="#services" class="text-gray-600 hover:text-gray-900">Services</a>
@@ -40,7 +44,7 @@
 <section id="services" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="">
             <div class="text-center p-6">
                 <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,37 +80,96 @@
 <section id="portfolio" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover"/>
+        <div>
+            <!--            <div id="PortLeftArrow" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand w-20 object-cover">-->
+            <!--                <p>&#x25B2</p>-->
+            <!--            </div>-->
+            <!--            <div id="verySpecialIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">-->
+            <div id="livingRoomIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/Living1.jpg" alt="Project 1" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Modern Living Room</h3>
                     <p class="text-gray-600">Contemporary design with comfortable living space</p>
                 </div>
             </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <div id="basementIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
                 <img src="/img/BasementRoom.jpg" alt="Project 2" class="w-full h-48 object-cover"/>
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Basement Movie Theaters</h3>
                     <p class="text-gray-600">Modern Home-Theater for a dream man-cave</p>
                 </div>
             </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="/img/AccentWall1.jpg" alt="Project 3" class="w-full h-48 object-cover"/>
+            <div id="accentWallIndexDiv" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand">
+                <img src="/img/AccentWall1.jpg" alt="Project 3" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
                     <p class="text-gray-600">An elegant nook to inspire creativity</p>
                 </div>
             </div>
+            <!--            </div>-->
+            <!--            <div id="PortRightArrow" class="bg-white rounded-lg overflow-hidden shadow-md mouse-hand w-20 object-cover">-->
+            <!--                <p>&#x25B2</p>-->
+            <!--            </div>-->
+        </div>
+    </div>
+    <div id="livingRoomSect" class="portfolio-item">
+        <div>
+            <img src="/img/icons8-close-32.png" id="livingRoomClose" alt="Close"/>
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/Collages/LivingRoomC.png" alt="" width="450">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Modern living rooms</h3>
+                <p>Elevate your home's central gathering space with our sleek, contemporary living room designs. We blend clean lines, minimalist aesthetics, and functional layouts to create sophisticated modern environments that balance style with comfort. Our approach incorporates carefully selected materials—from polished concrete and brushed metals to warm woods and textural fabrics—all working together to achieve visual harmony while maintaining a welcoming atmosphere.</p>
+                <p>Each contemporary living room is thoughtfully curated to reflect your personal lifestyle needs and design sensibilities, resulting in a refined space that feels both cutting-edge and timeless. Our attention to lighting, spatial flow, and architectural details ensures your modern living area becomes the striking yet comfortable centerpiece of your home.</p>
+            </div>
+        </div>
+    </div>
+    <div id="basementSect" class="portfolio-item">
+        <div>
+            <img src="/img/icons8-close-32.png" id="basementClose"  alt="Close">
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/Collages/BasementC.png" alt="" width="450">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Basement movie theaters</h3>
+                <p>Transform your underground space into an immersive entertainment experience with our custom basement movie room designs. We combine premium audio-visual technology with thoughtful interior elements to create the perfect cinematic environment. Our designs feature strategic lighting, acoustic treatments, and comfortable seating arrangements that maximize both the technical performance and aesthetic appeal of your home theater.</p>
+                <p>Each basement movie room is uniquely crafted to accommodate your specific space constraints, technical requirements, and design preferences, resulting in a personalized entertainment hub that will impress family and friends while providing years of enjoyment.</p>
+            </div>
+        </div>
+    </div>
+    <div id="accentWallSect" class="portfolio-item">
+        <div>
+            <img src="/img/icons8-close-32.png" id="accentWallClose"  alt="Close"/>
+        </div>
+        <div class="portfolio-content">
+            <div class="portfolio-images">
+                <img src="/img/Collages/AccentWallC.png"  alt="" width="450">
+            </div>
+            <div class="portfolio-text">
+                <h3 class="text-xl font-semibold mb-2">Accent Walls</h3>
+                <p>A striking accent wall can transform any room from ordinary to extraordinary. Our accent wall designs add depth, character, and visual interest to your space with carefully selected colors, textures, and patterns. Whether you prefer bold geometric designs, subtle textured finishes, or dramatic color statements, our team delivers custom solutions that perfectly complement your existing décor while making a powerful statement.</p>
+                <p>Each project is custom-designed to meet your specific needs and aesthetic preferences, ensuring a result that not only looks stunning but also reflects your personal style.</p>
+
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Contact Section
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
-        <div class="bg-gray-50 rounded-lg p-8">
+        <h3 class="text-xl font-bold text-center">Email</h3>
+        <h4 class="text-l font-bold text-center underline">CustomInteriorsByDJ@gmail.com</h4>
+        <br><br>
+        <h3 class="text-xl font-bold text-center">Phone</h3>
+        <h4 class="text-l font-bold text-center underline">(646) 404-1306</h4>
+        <!--<div class="bg-gray-50 rounded-lg p-8">
             <form class="space-y-6">
                 <div>
                     <label class="block text-gray-700 mb-2">Name</label>
@@ -122,9 +185,11 @@
                 </div>
                 <button class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition">Send Message</button>
             </form>
-        </div>
+
+
+        </div>-->
     </div>
-</section>-->
+</section>
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
