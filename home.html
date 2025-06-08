@@ -221,14 +221,14 @@
                 <thead>
                 <tr class="bg-gray-100">
                     <th class="px-6 py-4 text-left font-semibold text-gray-800">Services</th>
-                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Pricing</th>
-                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Additional Notes</th>
+<!--                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Pricing</th>-->
+                    <th class="px-6 py-4 text-left font-semibold text-gray-800">Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-800">Introduction Call</td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 font-medium text-gray-800">Introduction Call
+<!--                    <td class="px-6 py-4">-->
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">No Charge</span>
                     </td>
                     <td class="px-6 py-4 text-gray-600">
@@ -236,8 +236,8 @@
                     </td>
                 </tr>
                 <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-800">Consultation</td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 font-medium text-gray-800">Consultation
+<!--                    <td class="px-6 py-4">-->
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">$100/hour</span>
                     </td>
                     <td class="px-6 py-4 text-gray-600">
@@ -245,8 +245,8 @@
                     </td>
                 </tr>
                 <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-800">Full-room Design</td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 font-medium text-gray-800">Full-room Design
+<!--                    <td class="px-6 py-4">-->
                         <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">$350-$600</span>
                     </td>
                     <td class="px-6 py-4 text-gray-600">
@@ -255,9 +255,9 @@
                     </td>
                 </tr>
                 <tr class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-medium text-gray-800">Custom Builds</td>
-                    <td class="px-6 py-4">
-                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Variable</span>
+                    <td class="px-6 py-4 font-medium text-gray-800">Custom Builds
+<!--                    <td class="px-6 py-4">-->
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Pricing varies</span>
                     </td>
                     <td class="px-6 py-4 text-gray-600">
                         We will work with the clients to give an estimate if they'd like to include delivery, accessory and art purchases and customization. For custom builds like accent walls, built-in cabinetry etc. we will provide estimates and contract terms.
@@ -309,22 +309,34 @@
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
     <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-xl font-bold mb-4">DJs Custom Interiors</h3>
-                <p class="text-gray-400">Creating beautiful spaces that inspire</p>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!--            <div>-->
+<!--                <h3 class="text-xl font-bold mb-4">DJs Custom Interiors</h3>-->
+<!--                <p class="text-gray-400">Creating beautiful spaces that inspire</p>-->
+<!--            </div>-->
             <div>
                 <h3 class="text-xl font-bold mb-4">Contact</h3>
-                <p class="text-gray-400">Email: CustomInteriorsByDJ@gmail.com</p>
-                <p class="text-gray-400">Phone: (646) 404-1306</p>
+                <div class="flex space-x-4">
+                    <p class="text-gray-400">Email: CustomInteriorsByDJ@gmail.com</p>
+                </div>
+                <div class="flex space-x-4" style="padding-top:10px;">
+                    <p class="text-gray-400">Phone: (646) 404-1306</p>
+                </div>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+                    <svg class="w-6 h-6">
+                        <use href="/icons/sprite.svg#instagram"></use>
+                    </svg>
+                    <a href="https://www.instagram.com/djscustominteriors/" class="text-gray-400 hover:text-white">Instagram</a>
+                </div>
+                <div class="flex space-x-4" style="padding-top:5px;">
+                    <svg class="w-6 h-6">
+                        <use href="/icons/sprite.svg#thumbtack"></use>
+                    </svg>
                     <a href="https://www.thumbtack.com/wa/sammamish/interior-designers/djs-custom-interiors-llc/service/490734144508911621" class="text-gray-400 hover:text-white">Thumbtack</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+<!--                    <a href="#" class="text-gray-400 hover:text-white">Facebook</a>-->
                 </div>
             </div>
         </div>
