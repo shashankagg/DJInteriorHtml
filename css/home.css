@@ -1,3 +1,8 @@
+/* Header gradient to match logo */
+.header-gradient {
+    background: linear-gradient(180deg, #4a4a4a 0%, #3a3a3a 50%, #2d2d2d 100%);
+}
+
 .mouse-hand:hover {
     cursor: pointer;
 }
