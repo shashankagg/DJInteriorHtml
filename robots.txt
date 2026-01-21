@@ -1,0 +1,9 @@
+# robots.txt for Luminart Design Studio
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://luminartdesignstudio.com/sitemap.xml
+
+# Disallow admin or private areas (add as needed)
+# Disallow: /admin/
