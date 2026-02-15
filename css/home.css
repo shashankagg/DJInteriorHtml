@@ -6,6 +6,258 @@
 .mouse-hand:hover {
     cursor: pointer;
 }
+
+/* ============================================
+   PORTFOLIO SECTIONS - Always Visible Layout
+   ============================================ */
+
+.portfolio-section {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.portfolio-section:last-child {
+    border-bottom: none;
+}
+
+.portfolio-section-title {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.portfolio-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #4a4a4a;
+    border-radius: 2px;
+}
+
+/* Portfolio Image Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.portfolio-grid-large {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.portfolio-grid-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.portfolio-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-grid-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Image overlay caption on hover */
+.portfolio-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-grid-item:hover .portfolio-grid-overlay {
+    opacity: 1;
+}
+
+.portfolio-grid-overlay span {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* ============================================
+   LIGHTBOX - Full-screen image viewer
+   ============================================ */
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 1);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    animation: lightboxFadeIn 0.25s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+@keyframes lightboxFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: #ccc;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    max-width: 600px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10001;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 0.5rem;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    border-radius: 50%;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s, background 0.2s;
+    z-index: 10001;
+}
+
+.lightbox-nav:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .portfolio-grid-large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Always show overlay on mobile (no hover) */
+    .portfolio-grid-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 40%);
+    }
+
+    .portfolio-grid-overlay span {
+        font-size: 0.75rem;
+    }
+
+    .lightbox-nav {
+        font-size: 2rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .lightbox-close {
+        font-size: 2rem;
+        top: 0.5rem;
+        right: 0.8rem;
+    }
+
+    .lightbox-content img {
+        max-width: 95vw;
+        max-height: 75vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid-large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   LEGACY CLASSES (kept for compatibility)
+   ============================================ */
+
 .openable {
     min-height: 400px;
 }
@@ -23,7 +275,6 @@
     margin-bottom: 30px;
     margin-top:20px;
     overflow: hidden;
-
 }
 .portfolio-content {
     display: flex;
@@ -38,14 +289,12 @@
     gap: 15px;
     margin-bottom: 20px;
 }
-
 .portfolio-images img {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     max-width: 100%;
     height: auto;
 }
-
 .portfolio-text {
     flex: 1;
     min-width: 300px;
@@ -56,15 +305,12 @@
     margin-bottom: 15px;
     color: #222;
 }
-
 .portfolio-text p {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 20px;
 }
 #livingRoomClose, #basementClose, #accentWallClose, #livingRoomCollage, #basementCollage, #accentWallCollage {
-    /*position:absolute;
-    right: 0px;*/
     float:right;
 }
 .sidebar {
